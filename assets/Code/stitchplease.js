@@ -71,9 +71,9 @@ const PatternFlickity = () => {
 new Flickity( slider, {
     cellAlign:'center',
     wrapAround:'true',
-    contain:true,
     pageDots:false,
-    freeScroll:true,
+    freeScroll:false,
+    draggable: false,
     groupCells:true,
     imagesLoaded:true,
 })
