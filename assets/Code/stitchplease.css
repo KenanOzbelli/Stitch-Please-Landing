@@ -21,6 +21,10 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
+.SP-CarouselCard .flickity-prev-next-button{
+    background: none !important;
+    visibility: hidden;
+}
 
 .SP-PatternText{
     padding: .5rem;

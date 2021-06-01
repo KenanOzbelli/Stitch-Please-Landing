@@ -1,5 +1,6 @@
 const container = document.querySelector('.SP-ShowcasePattern');
 const PatternCards =  container.querySelectorAll('.SP-PatternCard');
+const PatternCarousel = container.querySelectorAll('.SP-CarouselCard')
 const YarnImgChanger = document.querySelector('#SP-YarnChange');
 const slider = document.querySelector('.main-carousel');
 const YarnImgArr = [
@@ -35,6 +36,36 @@ const ColorChangingSP = () => {
     },2000)
 }
 
+
+const PatternFlickity = () => {
+    PatternCarousel.forEach(Pcard => {
+       let flickity = new Flickity( Pcard, {
+            groupCells:false,
+            imagesLoaded:true,
+            prevNextButtons:true,
+            wrapAround:'true',
+            pageDots: false,
+        });
+        let arrowFlickity;
+
+        Pcard.addEventListener('mouseenter', (event) => {
+            const buttons = event.target.querySelectorAll('.flickity-button');
+
+            buttons.forEach(button => {
+                button.style = 'visibility: visible';
+            })
+        })
+
+        Pcard.addEventListener('mouseleave', (event) => {
+            const buttons = event.target.querySelectorAll('.flickity-button');
+
+            buttons.forEach(button => {
+                button.style = 'visibility: hidden ';
+            })
+        })
+    })
+}
+
 new Flickity( slider, {
     cellAlign:'center',
     wrapAround:'true',
@@ -47,3 +78,4 @@ new Flickity( slider, {
 
 SPShowcasePattern();
 ColorChangingSP();
+PatternFlickity();
