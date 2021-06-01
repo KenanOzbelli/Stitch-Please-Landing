@@ -39,30 +39,32 @@ const ColorChangingSP = () => {
 
 const PatternFlickity = () => {
     PatternCarousel.forEach(Pcard => {
-       let flickity = new Flickity( Pcard, {
+       new Flickity( Pcard, {
             groupCells:false,
             imagesLoaded:true,
             prevNextButtons:true,
             wrapAround:'true',
             pageDots: false,
         });
-        let arrowFlickity;
+            Pcard.addEventListener('mouseenter', (event) => {
+                if(window.innerWidth >= 768){
+                    const buttons = event.target.querySelectorAll('.flickity-button');
 
-        Pcard.addEventListener('mouseenter', (event) => {
-            const buttons = event.target.querySelectorAll('.flickity-button');
-
-            buttons.forEach(button => {
-                button.style = 'visibility: visible';
+                    buttons.forEach(button => {
+                        button.style = 'visibility: visible';
+                    })
+                }
             })
-        })
+            Pcard.addEventListener('mouseleave', (event) => {
+                if(window.innerWidth >= 768){
+                    const buttons = event.target.querySelectorAll('.flickity-button');
 
-        Pcard.addEventListener('mouseleave', (event) => {
-            const buttons = event.target.querySelectorAll('.flickity-button');
-
-            buttons.forEach(button => {
-                button.style = 'visibility: hidden ';
+                    buttons.forEach(button => {
+                        button.style = 'visibility: hidden ';
+                    })
+                }
             })
-        })
+    
     })
 }
 
