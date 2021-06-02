@@ -19,12 +19,12 @@ const SPShowcasePattern = () => {
     PatternCards.forEach( Pcard => {
         Pcard.addEventListener('mouseenter', (event) =>{
             if(window.innerWidth >= 768){
-            event.target.querySelector('.SP-PatternTextCard').style.display = 'block';
+            event.target.querySelector('.SP-PatternTextCard').classList.add('display');
             }
         });
         Pcard.addEventListener('mouseleave', (event) =>{
             if(window.innerWidth >= 768){
-            event.target.querySelector('.SP-PatternTextCard').style.display = 'none';
+            event.target.querySelector('.SP-PatternTextCard').classList.remove('display');
             }
         });
     })
@@ -56,21 +56,13 @@ const PatternFlickity = () => {
         ShowcaseSlide(flikty);
 
         Pcard.addEventListener('mouseenter', (event) => {
-            if(window.innerWidth >= 768){
-                const buttons = event.target.querySelectorAll('.flickity-button');
-
-                buttons.forEach(button => {
-                    button.style = 'visibility: visible';
-                })
+            if(window.innerWidth > 1024){
+                event.target.classList.remove('hidden');
             }
         })
         Pcard.addEventListener('mouseleave', (event) => {
-            if(window.innerWidth >= 768){
-                const buttons = event.target.querySelectorAll('.flickity-button');
-
-                buttons.forEach(button => {
-                    button.style = 'visibility: hidden ';
-                })
+            if(window.innerWidth > 1024){
+                event.target.classList.add('hidden');
             }
         })
     
