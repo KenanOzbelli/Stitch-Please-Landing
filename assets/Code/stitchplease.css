@@ -33,6 +33,7 @@
 .SP-CarouselCard .flickity-prev-next-button{
     background:none !important;
     height: 100% !important;
+    border-radius: 0 !important;
 }
 .SP-CarouselCard .flickity-prev-next-button.previous{
     left:0px !important;
