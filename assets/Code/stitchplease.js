@@ -50,6 +50,7 @@ const PatternFlickity = () => {
             prevNextButtons:true,
             wrapAround:'true',
             pageDots: true,
+            draggable: false,
         });
 
         ShowcaseSlide(flikty);
