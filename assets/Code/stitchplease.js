@@ -14,17 +14,22 @@ const YarnImgArr = [
 ]
 let i = 0;
 
+// Showcase Text on Laptops Only
 const SPShowcasePattern = () => {
     PatternCards.forEach( Pcard => {
         Pcard.addEventListener('mouseenter', (event) =>{
+            if(window.innerWidth >= 768){
             event.target.querySelector('.SP-PatternTextCard').style.display = 'block';
+            }
         });
         Pcard.addEventListener('mouseleave', (event) =>{
+            if(window.innerWidth >= 768){
             event.target.querySelector('.SP-PatternTextCard').style.display = 'none';
+            }
         });
     })
 }
-
+// Yarn Color Changer
 const ColorChangingSP = () => {
     setInterval(() => {
         YarnImgChanger.src = YarnImgArr[i];
@@ -36,38 +41,48 @@ const ColorChangingSP = () => {
     },2000)
 }
 
-
+// Pattern Sliders
 const PatternFlickity = () => {
     PatternCarousel.forEach(Pcard => {
-       new Flickity( Pcard, {
+       const flikty = new Flickity( Pcard, {
             groupCells:false,
             imagesLoaded:true,
             prevNextButtons:true,
             wrapAround:'true',
-            pageDots: false,
+            pageDots: true,
         });
-            Pcard.addEventListener('mouseenter', (event) => {
-                if(window.innerWidth >= 768){
-                    const buttons = event.target.querySelectorAll('.flickity-button');
 
-                    buttons.forEach(button => {
-                        button.style = 'visibility: visible';
-                    })
-                }
-            })
-            Pcard.addEventListener('mouseleave', (event) => {
-                if(window.innerWidth >= 768){
-                    const buttons = event.target.querySelectorAll('.flickity-button');
+        ShowcaseSlide(flikty);
 
-                    buttons.forEach(button => {
-                        button.style = 'visibility: hidden ';
-                    })
-                }
-            })
+        Pcard.addEventListener('mouseenter', (event) => {
+            if(window.innerWidth >= 768){
+                const buttons = event.target.querySelectorAll('.flickity-button');
+
+                buttons.forEach(button => {
+                    button.style = 'visibility: visible';
+                })
+            }
+        })
+        Pcard.addEventListener('mouseleave', (event) => {
+            if(window.innerWidth >= 768){
+                const buttons = event.target.querySelectorAll('.flickity-button');
+
+                buttons.forEach(button => {
+                    button.style = 'visibility: hidden ';
+                })
+            }
+        })
     
     })
 }
+const ShowcaseSlide = (slide) => {
+    PatternCards.forEach(card => {
+        card.classList.remove('is-loading')
+    })
+    slide.resize();
+}
 
+// Bottom Slider
 new Flickity( slider, {
     cellAlign:'center',
     wrapAround:'true',
