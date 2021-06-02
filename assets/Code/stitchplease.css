@@ -95,4 +95,7 @@
     .SP-PatternMbText{
         display: block;
     }
+    .SP-CarouselCard .flickity-prev-next-button{
+        visibility: visible;
+    }
 }
