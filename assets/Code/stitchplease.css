@@ -131,14 +131,6 @@
         visibility: visible;
     }
 }
-@media  screen and (max-width:991px) {
-    .flickity-page-dots{
-        display: block;
-    }
-    .SP-PatternMbText{
-        display: block;
-    }
-}
 
 @media screen and (max-width:768px) {
     h1{
@@ -165,5 +157,10 @@
     .carousel-cell{
         width:75%;
     }
-
+    .flickity-page-dots{
+        display: block;
+    }
+    .SP-PatternMbText{
+        display: block;
+    }
 }
