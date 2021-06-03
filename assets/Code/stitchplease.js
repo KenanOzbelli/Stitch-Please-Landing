@@ -18,7 +18,7 @@ let i = 0;
 const SPShowcasePattern = () => {
     PatternCards.forEach( Pcard => {
         Pcard.addEventListener('mouseenter', (event) =>{
-            if(window.innerWidth >= 768){
+            if(window.innerWidth > 768){
             event.target.querySelector('.SP-PatternTextCard').classList.add('display');
             }
         });
@@ -50,7 +50,7 @@ const PatternFlickity = () => {
             prevNextButtons:true,
             wrapAround:'true',
             pageDots: true,
-            draggable: false
+            draggable: false,
         });
 
         ShowcaseSlide(flikty);
