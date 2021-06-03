@@ -18,12 +18,12 @@ let i = 0;
 const SPShowcasePattern = () => {
     PatternCards.forEach( Pcard => {
         Pcard.addEventListener('mouseenter', (event) =>{
-            if(window.innerWidth > 768){
+            if(window.innerWidth >= 991){
             event.target.querySelector('.SP-PatternTextCard').classList.add('display');
             }
         });
         Pcard.addEventListener('mouseleave', (event) =>{
-            if(window.innerWidth >= 768){
+            if(window.innerWidth >= 991){
             event.target.querySelector('.SP-PatternTextCard').classList.remove('display');
             }
         });
