@@ -1,3 +1,4 @@
+
 .SP-ShowcasePattern{
     --bs-gutter-x:none !important; 
     position: relative; 
@@ -6,6 +7,7 @@
 }
 .SP-Banner{
     position: relative;
+    width: 100%;
 }
 .SP-Title{
     position: absolute;
@@ -17,8 +19,21 @@
     width:40%;
 }
 .SP-MainImage{
+    z-index: 10;
+    display: block;
+    margin: 5rem auto;
+    position: relative;
+    width:50%;
+}
+.SP-Accent-Middle{
     margin:0 auto; 
-    display:block;
+    position: absolute;
+    width: 25%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
 }
 .SP-Accent-Top{
     position:absolute; 
@@ -49,7 +64,6 @@
     margin:0 auto;
 }
 .SP-PatternTextCard{
-    display: none;
     position: absolute;
     bottom: 3rem;
     margin: auto;
@@ -58,9 +72,6 @@
     right: 30px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-}
-.SP-PatternTextCard.display{
-    display:block;
 }
 .SP-CarouselCard{
     box-shadow: 1px 1px 16px rgb(0 0 0 / 19%);
@@ -106,6 +117,9 @@
 .carousel-cell{
     width:20%;
 }
+.CarouselCellPattern{
+    width:100%;
+}
 .carousel_image{
     width:100%;
     max-width: 500px;
@@ -114,8 +128,7 @@
     padding:1rem;
 }
 .flickity-page-dots{
-    bottom:-45px !important;
-    display:none;
+    bottom:-30px !important;
 }
 .flickity-page-dots .dot {
     height: 4px !important;
@@ -129,6 +142,9 @@
 @media screen and (max-width:1024px){
     .SP-CarouselCard.hidden .flickity-prev-next-button{
         visibility: visible;
+    }
+    .flickity-page-dots{
+        bottom:-17px !important;
     }
 }
 
@@ -145,6 +161,9 @@
     h5{
         font-size:.9rem;
     }
+    .SP-PatternTextCard{
+     display: none;
+    }
     .SP-ShowcasePattern{
         top:0;
     }
@@ -158,9 +177,12 @@
         width:75%;
     }
     .flickity-page-dots{
-        display: block;
+        bottom:-40px !important;
     }
     .SP-PatternMbText{
         display: block;
+    }
+    .SP-MainImage{
+       margin: 2rem auto;
     }
 }

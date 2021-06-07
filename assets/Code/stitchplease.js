@@ -14,21 +14,6 @@ const YarnImgArr = [
 ]
 let i = 0;
 
-// Showcase Text on Laptops Only
-const SPShowcasePattern = () => {
-    PatternCards.forEach( Pcard => {
-        Pcard.addEventListener('mouseenter', (event) =>{
-            if(window.innerWidth >= 768){
-            event.target.querySelector('.SP-PatternTextCard').classList.add('display');
-            }
-        });
-        Pcard.addEventListener('mouseleave', (event) =>{
-            if(window.innerWidth >= 768){
-            event.target.querySelector('.SP-PatternTextCard').classList.remove('display');
-            }
-        });
-    })
-}
 // Yarn Color Changer
 const ColorChangingSP = () => {
     setInterval(() => {
@@ -86,6 +71,5 @@ new Flickity( slider, {
     imagesLoaded:true,
 })
 
-SPShowcasePattern();
 ColorChangingSP();
 PatternFlickity();
