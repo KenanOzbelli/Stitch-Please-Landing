@@ -27,30 +27,30 @@
 }
 .SP-Accent-Middle{
     position: absolute;
-    width: 42%;
+    width: 40%;
     top: 0;
     opacity: 60%;
-    bottom: -49%;
-    left: 0;
-    transform: rotateZ(257deg);
+    bottom: 11%;
+    left: 0%;
+    transform: rotateZ(263deg);
     right: 0;
     margin: auto;
 }
 .SP-Accent-Top{
     position: absolute;
-    width: 49%;
-    top: -37%;
-    transform: rotateY(180deg)rotateZ(67deg);
+    width: 44%;
+    top: -41%;
+    transform: rotateY(180deg)rotateZ(74deg);
     left: -4%;
     opacity: 60%;
 }
 .SP-Accent-Bottom{
     position: absolute;
-    width: 40%;
+    width: 41%;
     transform: rotateX(180deg)rotateZ(90deg);
     right: 0;
     opacity: 60%;
-    top: -56%;
+    top: -67%;
 }
 
 .SP-PatternCard{
